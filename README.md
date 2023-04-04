@@ -1,3 +1,4 @@
+<div style="text-align: right">
 # **2D Bicycle Kinematic Model**
 (Part of Self Driving Car Specialization)
 
@@ -5,7 +6,7 @@
 
 1.	**Problem Statement.**
 
-<div style="text-align: right">As research on autonomous vehicle matures, the subject of consistency across its many levels becomes increasingly important in ensuring the vehicle's safety. Even if each layer is adequately developed separately, an ill-planned vehicle architecture might be exceedingly dangerous. To understand the vehicle models, we will focus on the derivation, analysis, and implementation of a car by simplifying it into a 2D Bicycle Model.</div>
+As research on autonomous vehicle matures, the subject of consistency across its many levels becomes increasingly important in ensuring the vehicle's safety. Even if each layer is adequately developed separately, an ill-planned vehicle architecture might be exceedingly dangerous. To understand the vehicle models, we will focus on the derivation, analysis, and implementation of a car by simplifying it into a 2D Bicycle Model.
 
 2.	**Approach.**	In this repo, we will derive bicycle kinematic model, which is a well-versed model for its performance in describing vehicle motion in normal driving environment. Due to its simplicity and conformance to the nonholonomic restrictions, the model has long been utilised as a viable control-oriented model for cars. The model is called Front Wheel Steering Model, due to changing of front wheel orientation relative to vehicle's heading as shown in Fig 1.
  
@@ -75,4 +76,4 @@ The model start its simulation from initial conditions of		          , move Left
 
                **Fig 9-10 : Model Turns Right by π/3**
 
-3.	**Conclusion.**	A car can be simplified as a 2D bicycle model in a nonholonomic environment for better visualization of vehicle dynamics and control. We developed a bicycle kinematic model for three separate reference locations on the vehicle and implemented it in MATLAB, which allowed us to simulate the model's behavior. This model can be used to create kinematic steering controllers. The bicycle kinematic model provides the foundation for understanding and building self-driving automobile controllers, as well as for developing dynamic vehicle models for any moving system. The Bicycle Model is a classic model that produces a well-versed job in capturing motion of any vehicle in normal driving conditions.
+3.	**Conclusion.**	A car can be simplified as a 2D bicycle model in a nonholonomic environment for better visualization of vehicle dynamics and control. We developed a bicycle kinematic model for three separate reference locations on the vehicle and implemented it in MATLAB, which allowed us to simulate the model's behavior. This model can be used to create kinematic steering controllers. The bicycle kinematic model provides the foundation for understanding and building self-driving automobile controllers, as well as for developing dynamic vehicle models for any moving system. The Bicycle Model is a classic model that produces a well-versed job in capturing motion of any vehicle in normal driving conditions.</div>
