@@ -7,13 +7,16 @@
 
 <div style="text-align: right">As research on autonomous vehicle matures, the subject of consistency across its many levels becomes increasingly important in ensuring the vehicle's safety. Even if each layer is adequately developed separately, an ill-planned vehicle architecture might be exceedingly dangerous. To understand the vehicle models, we will focus on the derivation, analysis, and implementation of a car by simplifying it into a 2D Bicycle Model.</div>
 
+
 2.	**Approach.**
 
 <div style="text-align: right">In this repo, we will derive bicycle kinematic model, which is a well-versed model for its performance in describing vehicle motion in normal driving environment. Due to its simplicity and conformance to the nonholonomic restrictions, the model has long been utilised as a viable control-oriented model for cars. The model is called Front Wheel Steering Model, due to changing of front wheel orientation relative to vehicle's heading as shown in Fig 1.</div>
  
+ 
      ![image](https://user-images.githubusercontent.com/57298558/229774455-410c9bf0-35b5-494e-9335-55844cec3b98.png)
 
                **Fig 1 : 2D Bicycle Kinematics for Front Wheel Steering Model**
+
 
 2.1	**Model Analysis.**
 
@@ -28,6 +31,7 @@
                **Fig3: Model Analysis of Rear Wheel**
      
 <div style="text-align: right">Our target is to compute state [x, y, 𝜃, 𝛿], 𝜃 is heading angle, 𝛿 is steering angle. Our inputs are [𝑣, 𝜑], 𝑣 is velocity, 𝜑 is steering rate.</div>
+
 
 a.	**Rear Wheel.**
  
@@ -47,11 +51,13 @@ R = L / tan(𝛿)			𝜃_dot = 𝑣 / (L / tan(𝛿)) = 𝑣 * tan(𝛿) / L
 
                **Fig5. Model analysis at CG**
     
+    
 b.	**Front Wheel.**
 
 <div style="text-align: right">As figure 4 shows, the desired point is in the center of front wheel. R can be computed as L / sin(𝛿). We can get the result of changing rate of x, y position.</div>
 ẋ = v * cos (𝛿 + 𝜃)				ẏ = v * sin (𝛿 + 𝜃)
 𝜃_dot = v / R = v / (L/sin(𝛿)) = v * sin(𝛿)/L		𝛿_dot = 𝜑
+
 
 c.	**Center of Gravity.**
  
@@ -72,6 +78,7 @@ So slip angle:		 𝛽 = arctan(lr * tan (𝛿) / L )
 𝛿_dot = 𝜑
 <div style="text-align: right">Our analyzed bicycle model has the States (outputs) as [x, y, 𝜃, 𝛿], inputs [𝑣, 𝜑], where 𝑣 is the velocity and 𝜑 is steering rate. We can compute the changing rate of [x, y, 𝜃, 𝛿], which is ẋ ẏ, 𝜃_dot, 𝛿_dot. </div>
 
+
 2.2	**Implementation.**
  
 <div style="text-align: right">The derived equation for 2D bicycle model was simulated in using MATLAB Script, by implementing the Rear Wheel equations. To get the final state [x, y, 𝜃, 𝛿], we can use discrete time model:</div>
@@ -87,6 +94,7 @@ The model start its simulation from initial conditions of		          , move Left
 ![image](https://user-images.githubusercontent.com/57298558/229776181-132f1820-b1ff-414a-be55-1193274447e6.png)
 
                **Fig 9-10 : Model Turns Right by π/3**
+
 
 3.	**Conclusion.**
  
