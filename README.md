@@ -8,10 +8,14 @@
 2.	**Approach.**	In this assignment, we will derive bicycle kinematic model, which is a well-versed model for its performance in describing vehicle motion in normal driving environment. Due to its simplicity and conformance to the nonholonomic restrictions, the model has long been utilised as a viable control-oriented model for cars. The model is called Front Wheel Steering Model, due to changing of front wheel orientation relative to vehicle's heading as shown in Fig 1.
  
  ![image](https://user-images.githubusercontent.com/57298558/229774455-410c9bf0-35b5-494e-9335-55844cec3b98.png)
+
 **Fig 1 : 2D Bicycle Kinematics for Front Wheel Steering Model**
 
 2.1	**Model Analysis.**	To analyze the kinematics of bicycle model, we must select a reference point X, Y which can be placed at the center of the rear & front wheel and at center of gravity (cg). 
  		 
+    ![image](https://user-images.githubusercontent.com/57298558/229774605-45c82391-edc6-46d0-803d-dda91f691e50.png)
+  ![image](https://user-images.githubusercontent.com/57298558/229774640-f0a03dba-a5fb-427f-8dcd-ee9ba3dba2c0.png)
+
 **Fig2: Bicycle Model**				    **Fig3: Model Analysis of Rear Wheel**
 Our target is to compute state [x, y, 𝜃, 𝛿], 𝜃 is heading angle, 𝛿 is steering angle. Our inputs are [𝑣, 𝜑], 𝑣 is velocity, 𝜑 is steering rate.
 a.	**Rear Wheel.**	If the desired point is at the center of the rear wheel. First, apply the Instantaneous Center of Rotation (ICR) and then compute state change rate:
