@@ -22,6 +22,7 @@
                **Fig3: Model Analysis of Rear Wheel**
      
 Our target is to compute state [x, y, 𝜃, 𝛿], 𝜃 is heading angle, 𝛿 is steering angle. Our inputs are [𝑣, 𝜑], 𝑣 is velocity, 𝜑 is steering rate.
+
 a.	**Rear Wheel.**	If the desired point is at the center of the rear wheel. First, apply the Instantaneous Center of Rotation (ICR) and then compute state change rate:
 ẋ = v * cos (𝜃)		ẏ = v * sin (𝜃)
 𝜃_dot is equal to rotation rate 𝜔,
