@@ -3,7 +3,7 @@
 
 **Analysis of 2d bicycle kinematic model and implementation of rear wheel using matlab**
 
-1.	**Problem Statement.**
+# 1.	**Problem Statement.**
 
 <div style="text-align: justify">As research on autonomous vehicle matures, the subject of consistency across its many levels becomes increasingly important in ensuring the vehicle's safety. Even if each layer is adequately developed separately, an ill-planned vehicle architecture might be exceedingly dangerous. To understand the vehicle models, we will focus on the derivation, analysis, and implementation of a car by simplifying it into a 2D Bicycle Model.</div>
 
@@ -33,7 +33,7 @@
 <div style="text-align: justify">Our target is to compute state [x, y, 𝜃, 𝛿], 𝜃 is heading angle, 𝛿 is steering angle. Our inputs are [𝑣, 𝜑], 𝑣 is velocity, 𝜑 is steering rate.</div>
 
 
-a.	**Rear Wheel.**
+# a.	**Rear Wheel.**
  
 <div style="text-align: justify">If the desired point is at the center of the rear wheel. First, apply the Instantaneous Center of Rotation (ICR) and then compute state change rate:</div>
 ẋ = v * cos (𝜃)		ẏ = v * sin (𝜃)
@@ -52,14 +52,14 @@ R = L / tan(𝛿)			𝜃_dot = 𝑣 / (L / tan(𝛿)) = 𝑣 * tan(𝛿) / L
                **Fig5. Model analysis at CG**
     
     
-b.	**Front Wheel.**
+# b.	**Front Wheel.**
 
 <div style="text-align: justify">As figure 4 shows, the desired point is in the center of front wheel. R can be computed as L / sin(𝛿). We can get the result of changing rate of x, y position.</div>
 ẋ = v * cos (𝛿 + 𝜃)				ẏ = v * sin (𝛿 + 𝜃)
 𝜃_dot = v / R = v / (L/sin(𝛿)) = v * sin(𝛿)/L		𝛿_dot = 𝜑
 
 
-c.	**Center of Gravity.**
+# c.	**Center of Gravity.**
  
 If the desired point is at the center of gravity or cg.
 ẋ = v * cos(𝛽 + 𝜃)				ẏ = v* sin(𝛽 + 𝜃)
@@ -96,6 +96,6 @@ The model start its simulation from initial conditions of		          , move Left
                **Fig 9-10 : Model Turns Right by π/3**
 
 
-3.	**Conclusion.**
+# 3.	**Conclusion.**
  
 <div style="text-align: justify">A car can be simplified as a 2D bicycle model in a nonholonomic environment for better visualization of vehicle dynamics and control. We developed a bicycle kinematic model for three separate reference locations on the vehicle and implemented it in MATLAB, which allowed us to simulate the model's behavior. This model can be used to create kinematic steering controllers. The bicycle kinematic model provides the foundation for understanding and building self-driving automobile controllers, as well as for developing dynamic vehicle models for any moving system. The Bicycle Model is a classic model that produces a well-versed job in capturing motion of any vehicle in normal driving conditions.</div>
