@@ -12,9 +12,8 @@
 
 <div style="text-align: justify">In this repo, we will derive bicycle kinematic model, which is a well-versed model for its performance in describing vehicle motion in normal driving environment. Due to its simplicity and conformance to the nonholonomic restrictions, the model has long been utilised as a viable control-oriented model for cars. The model is called Front Wheel Steering Model, due to changing of front wheel orientation relative to vehicle's heading as shown in Fig 1.</div>
  
+ ![image](https://user-images.githubusercontent.com/57298558/229774455-410c9bf0-35b5-494e-9335-55844cec3b98.png)
  
-     ![image](https://user-images.githubusercontent.com/57298558/229774455-410c9bf0-35b5-494e-9335-55844cec3b98.png)
-
                **Fig 1 : 2D Bicycle Kinematics for Front Wheel Steering Model**
 
 
