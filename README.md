@@ -7,16 +7,21 @@
 
 2.	**Approach.**	In this assignment, we will derive bicycle kinematic model, which is a well-versed model for its performance in describing vehicle motion in normal driving environment. Due to its simplicity and conformance to the nonholonomic restrictions, the model has long been utilised as a viable control-oriented model for cars. The model is called Front Wheel Steering Model, due to changing of front wheel orientation relative to vehicle's heading as shown in Fig 1.
  
- ![image](https://user-images.githubusercontent.com/57298558/229774455-410c9bf0-35b5-494e-9335-55844cec3b98.png)
+     ![image](https://user-images.githubusercontent.com/57298558/229774455-410c9bf0-35b5-494e-9335-55844cec3b98.png)
 
-**Fig 1 : 2D Bicycle Kinematics for Front Wheel Steering Model**
+     **Fig 1 : 2D Bicycle Kinematics for Front Wheel Steering Model**
 
 2.1	**Model Analysis.**	To analyze the kinematics of bicycle model, we must select a reference point X, Y which can be placed at the center of the rear & front wheel and at center of gravity (cg). 
- 		 
-    ![image](https://user-images.githubusercontent.com/57298558/229774605-45c82391-edc6-46d0-803d-dda91f691e50.png)
-  ![image](https://user-images.githubusercontent.com/57298558/229774640-f0a03dba-a5fb-427f-8dcd-ee9ba3dba2c0.png)
 
-**Fig2: Bicycle Model**				    **Fig3: Model Analysis of Rear Wheel**
+     ![image](https://user-images.githubusercontent.com/57298558/229774895-10433240-f70a-456e-8fd6-8b72f4bb1731.png)
+
+     **Fig2: Bicycle Model**
+
+
+     ![image](https://user-images.githubusercontent.com/57298558/229774640-f0a03dba-a5fb-427f-8dcd-ee9ba3dba2c0.png)
+
+     **Fig3: Model Analysis of Rear Wheel**
+     
 Our target is to compute state [x, y, 𝜃, 𝛿], 𝜃 is heading angle, 𝛿 is steering angle. Our inputs are [𝑣, 𝜑], 𝑣 is velocity, 𝜑 is steering rate.
 a.	**Rear Wheel.**	If the desired point is at the center of the rear wheel. First, apply the Instantaneous Center of Rotation (ICR) and then compute state change rate:
 ẋ = v * cos (𝜃)		ẏ = v * sin (𝜃)
@@ -26,7 +31,13 @@ From Figure3, L is the bicycle length and 𝛿 is steering angle, R and 𝜃_dot
 R = L / tan(𝛿)			𝜃_dot = 𝑣 / (L / tan(𝛿)) = 𝑣 * tan(𝛿) / L
 𝛿_dot is equal to the input 𝜑 (rate of change of steering angle)  :  𝛿_dot = 𝜑
     	 
-    **Fig4. Model analysis at Front Wheel**			**Fig5. Model analysis at CG**
+      ![image](https://user-images.githubusercontent.com/57298558/229775115-f3f12903-f47e-403d-8d8a-62f75df413a8.png)
+
+     **Fig4. Model analysis at Front Wheel**
+     
+     ![image](https://user-images.githubusercontent.com/57298558/229775150-1f20253e-3af2-4108-b6d0-93763edefee0.png)
+
+     **Fig5. Model analysis at CG**
     
 b.	**Front Wheel.**	As figure 4 shows, the desired point is in the center of front wheel. R can be computed as L / sin(𝛿). We can get the result of changing rate of x, y position.
 ẋ = v * cos (𝛿 + 𝜃)				ẏ = v * sin (𝛿 + 𝜃)
@@ -38,6 +49,8 @@ S = L / tan(𝛿)
 R = S / cos (𝛽) = L / (tan (𝛿) *cos (𝛽) )
 𝜃_dot = v / R = v *tan (𝛿) *cos (𝛽) / L
  
+ ![image](https://user-images.githubusercontent.com/57298558/229775198-c21d4806-0322-48c8-a1ee-c4e6888b882a.png)
+
 **Fig 6: Analysis for 𝛽**
 
 Furthermore, if we know the distance between the rear wheel and cg denoted as l_r, we can also compute the slip angle 𝛽.
